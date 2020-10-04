@@ -39,7 +39,7 @@
             // Правила
             // 
             this.Правила.AutoSize = true;
-            this.Правила.Location = new System.Drawing.Point(9, 12);
+            this.Правила.Location = new System.Drawing.Point(12, 123);
             this.Правила.Name = "Правила";
             this.Правила.Size = new System.Drawing.Size(46, 13);
             this.Правила.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(284, 12);
+            this.textBox1.Location = new System.Drawing.Point(275, 139);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 20);
             this.textBox1.TabIndex = 3;
@@ -55,7 +55,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(284, 38);
+            this.button1.Location = new System.Drawing.Point(275, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 4;
@@ -66,7 +66,7 @@
             // List1
             // 
             this.List1.FormattingEnabled = true;
-            this.List1.Location = new System.Drawing.Point(12, 31);
+            this.List1.Location = new System.Drawing.Point(15, 139);
             this.List1.Name = "List1";
             this.List1.Size = new System.Drawing.Size(254, 95);
             this.List1.TabIndex = 5;
@@ -74,15 +74,15 @@
             // List2
             // 
             this.List2.FormattingEnabled = true;
-            this.List2.Location = new System.Drawing.Point(12, 145);
+            this.List2.Location = new System.Drawing.Point(12, 22);
             this.List2.Name = "List2";
-            this.List2.Size = new System.Drawing.Size(267, 95);
+            this.List2.Size = new System.Drawing.Size(652, 95);
             this.List2.TabIndex = 6;
             // 
             // Память
             // 
             this.Память.AutoSize = true;
-            this.Память.Location = new System.Drawing.Point(12, 129);
+            this.Память.Location = new System.Drawing.Point(12, 6);
             this.Память.Name = "Память";
             this.Память.Size = new System.Drawing.Size(51, 13);
             this.Память.TabIndex = 7;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 267);
+            this.ClientSize = new System.Drawing.Size(676, 259);
             this.Controls.Add(this.Память);
             this.Controls.Add(this.List2);
             this.Controls.Add(this.List1);
