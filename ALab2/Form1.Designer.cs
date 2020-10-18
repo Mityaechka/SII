@@ -34,6 +34,9 @@
             this.List1 = new System.Windows.Forms.ListBox();
             this.List2 = new System.Windows.Forms.ListBox();
             this.Память = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Правила
@@ -61,7 +64,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Прямой вывод";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Result);
+            this.button1.Click += new System.EventHandler(this.Command1_Click);
             // 
             // List1
             // 
@@ -88,11 +91,38 @@
             this.Память.TabIndex = 7;
             this.Память.Text = "Правила";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(285, 145);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(190, 95);
+            this.listBox1.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(282, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Конфликтный набор";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(426, 95);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(112, 20);
+            this.textBox2.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 267);
+            this.ClientSize = new System.Drawing.Size(550, 267);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Память);
             this.Controls.Add(this.List2);
             this.Controls.Add(this.List1);
@@ -114,6 +144,9 @@
         private System.Windows.Forms.ListBox List1;
         private System.Windows.Forms.ListBox List2;
         private System.Windows.Forms.Label Память;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

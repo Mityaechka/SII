@@ -18,6 +18,10 @@ namespace ALab2
         private int[] d = new int[7];
         private string[] x = new string[11];
         private int M;
+
+
+        private int[] y = new int[11];
+
         public Form1()
         {
             InitializeComponent();
@@ -149,6 +153,122 @@ namespace ALab2
         {
 
         }
-    }
 
+        private void Command1_Click(object sender, EventArgs e)
+        {
+            int k1;
+            int i;
+            int i1;
+            int k4;
+            int m2;
+            int m1;
+            int k2;
+            int k3;
+            int k;
+            int kk;
+            int j;
+            string r = "";
+            x[0] = textBox1.Text;  // ‘занесение исходных данных в РП
+            M = 0;
+            List1.Items.Add(x[0]);
+            kk = 0;
+            for (i1 = 0; i1 <= 6; i1++)  // ‘ поиск правил конфликтного набора
+            {
+                if (a[i1, 0] == x[0] & z[i1] == 1)
+                {
+                    y[kk] = i1;
+                    List2.Items.Add(i1);
+                    kk = kk + 1;
+                }
+            }
+
+            k4 = 0;
+            m2 = 0;
+        a1:
+            ;
+            // ‘ обработка очередного правила из КН
+
+            for (m1 = 0; m1 <= 6; m1++)  // ‘снятие отметки о применении для всех правил
+                d[m1] = 0;
+            for (m1 = 0; m1 <= kk; m1++) /* TODO ERROR: Skipped SkippedTokensTrivia */ // ‘ отметка о  применении  правил из КН
+                d[m1] = 1;
+            d[m2] = 0;
+            List1.Items.Clear();
+            List1.Items.Add(x[0]);
+            M = 0;
+            k3 = 0;
+        aa:
+            ;
+            // ‘ очередная итерация при обработке правил
+            for (i = 0; i <= 6; i++)  // ‘ цикл для обработки правил
+            {
+                if (d[i] == 0)
+                {
+                    k2 = 0;
+                    for (j = 0; j <= z[i] - 1; j++)
+                    {
+                        k1 = 0;
+                        for (k = 0; k <= M; k++)  // ‘ цикл для перебора всех условий из РП
+                        {
+                            if (a[i, j] == x[k])
+                            {
+                                k1 = k1 + 1;
+                                k2 = k2 + 1;
+                                k = M + 1;
+                            }
+                        }
+                        if (k1 == 0)
+                            j = z[i];
+                        else if (k1 == 1 & k2 == z[i])
+                        {
+                            k3 = k3 + 1;   // ‘ счетчик числа истинных правил
+                            if (k3 < 7)
+                            {
+                                M = M + 1;
+                                x[M] = b[i];
+                                List1.Items.Add(x[M]);
+                                d[i] = 1;
+                            }
+                            else
+                                r = b[i];// ‘ запоминание решения
+                        }
+                    }
+                }
+            }
+
+            if (k3 < 7)
+            {
+                if (k3 != k4)
+                {
+                    k4 = k3;
+                    goto aa;   // ‘ возврат на очередную итерацию
+                }
+                else
+                {
+                    MessageBox.Show("тупиковое решение - правило из конфл.набора " +y[m2]);
+                    m2 = m2 + 1;
+                    if (m2 <= kk - 1)
+                    {
+                        k4 = 0;
+                        goto a1;
+                    }
+                }
+            }
+            else
+            {
+                textBox2.Text = r;  // ‘ вывод решения
+               MessageBox.Show("получено решение - правило из конфл.набора " + y[m2]);
+                m2 = m2 + 1;
+                if (m2 <= kk - 1)
+                {
+                    MessageBox.Show("не все правила конфл. набора использованы, возврат на итерацию");
+                    textBox2.Text = " ";
+                    goto a1;  // ‘ возврат на обработку следующего правила из КН
+                }
+            }
+            MessageBox.Show("все правила конфликтного набора использованы");
+        }
+    }
 }
+
+
